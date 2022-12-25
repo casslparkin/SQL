@@ -1,0 +1,26 @@
+Create a bookstore database
+
+CREATE TABLE books (id INTEGER PRIMARY KEY, name TEXT, price NUMERIC, genre TEXT, rating NUMERIC);
+
+INSERT INTO books VALUES (1, "Turn Around Bright Eyes", 15.99,"Memoir", 3.63);
+INSERT INTO books VALUES (2, "Parable of the Sower", 12.99, "Fiction", 4.21);
+INSERT INTO books VALUES (3, "American Dirt", 16.99, "Fiction", 4.37);
+INSERT INTO books VALUES (4, "Somebody's Daughter", 14.99, "Memoir", 4.07);
+INSERT INTO books VALUES (5, "The Nature of Fragile Things", 12.99, "Nonfiction", 4.27);
+INSERT INTO books VALUES (6, "WHY I WAKE EARLY", 9.99, "Poetry", 4.41);
+INSERT INTO books VALUES (7, "JESUS FEMINIST", 12.99, "Nonfiction", 3.90);
+INSERT INTO books VALUES (8, "How Does God Change Us?", 7.99, "Nonfiction", 4.56);
+INSERT INTO books VALUES (9, "The Great Alone", 14.99, "Fiction", 4.38);
+INSERT INTO books VALUES (10, "What Kind of Woman", 12.99, "Poetry", 4.10);
+INSERT INto books Values (11, "Good Grief", 9.99, "Fiction", 3.73);
+INSERT INTO books Values (12, "Spinster:Making a Life of One's Own", 12.99, "Memoir", 3.46);
+Insert INTO books Values (13, "I am Malala", 15.99, "Memoir", 4.14);
+INsert INTO books Values (14,"Wild", 14.99, "Memoir", 4.04);
+INSERT INTO books Values (15, "The Maid", 12.99, "Fiction", 3.85);
+
+--display the database ordered by price. 
+SELECT * FROM books;
+SELECT * FROM books ORDER BY price;
+
+--determine average rating
+SELECT AVG(rating) FROM books;
