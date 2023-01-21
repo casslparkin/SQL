@@ -1,0 +1,62 @@
+Create TABLE Author_Info (iD integer primary key, Name TEXT, Birthdate NUMERIC, Place_of_Origin TEXT, Current_Residence TEXT);
+
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence) VALUES ("Joshua Cohen","1980-09-06", "New Jersey", "Brooklyn, NY");
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence) VALUES ("Louise Erdrich","1954-06-08", "Minnesota", "Minneapolis, MN");
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence)VALUES ("Colsen Whitehead","1969-11-06", "New York", "Manhattan");
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence)VALUES ("Richrd Powers","1957-06-18", "Illinois", "Great Smoky Mountains, TN");
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence)VALUES ("Andrew Sean Greer","1970-11-21", "Washington DC", "Nashville, TN");
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence) VALUES ("Viet Thanh Nguyen","1971-03-13","South Vietnam", "Pasadena,CA");
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence)VALUES ("Anthony Doerr","1973-10-27","Ohio", "Boise, ID");
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence) VALUES ("Donna Tartt","1963-12-23","Mississippi", "Greenwood,MS");
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence) VALUES ("Adam Johnson","1967-07-12","South Dakota", "Temple, AZ");
+INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence) VALUES ("Jennifer Egan","1963-09-07","Chicago","Brookly,NY");
+
+SELECT*FROM Author_Info;
+
+Create TABLE Work_bio 
+(id INTEGER PRIMARY KEY,
+Author_Id INTEGER, 
+Debut_Novel TEXT, 
+DN_Pub_Year INTEGER, 
+Pulitzer_Winner TEXT, 
+Pulitzer_Year INTEGER);
+
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (1, "A Heaven of Others","2008","The Netanyahus", "2022");
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (2, "Love Medicine","1984","The Night Watchman",	"2021");
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (3,"The Intuitionist","1999","The Underground Railroad","2017");
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (4,"The Farmers on Their Way to a Dance","1985",	"The Overstory","2019");
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (5,"The Path of Minor Planets: A Novel","2001",	"Less", "2018");
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (6,"The Sympathizer", "2016","The Sympathizer",	"2016");
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (7, "About Grace","2004","All the Light We Cannot See","2015");
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (8,"The Secret History","1992","The Goldfinch",	"2014");
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (9, "Emporium","2002","The Orphan Master’s Son",	"2013");
+INSERT into Work_Bio (Author_Id, Debut_Novel, DN_Pub_Year, Pulitzer_Winner, Pulitzer_Year) 
+    Values (10, "The Invisible Circus", "1995", "A Visit from the Goon Squad","2011");
+    
+SELECT*FROM Work_Bio;
+
+SELECT author_info.name, 
+       author_info.current_residence, 
+       work_bio.debut_novel,
+       work_bio.dn_pub_year
+       FROM author_info
+   JOIN  work_bio
+   ON author_info.id=work_bio.author_id;
+   
+SELECT author_info.name,
+       work_bio.dn_pub_year,
+       work_bio.Pulitzer_Winner,
+       work_bio.Pulitzer_Year
+       FROM work_bio
+   LEFT OUTER JOIN author_info
+   ON work_bio.author_id=author_info.id;
+   
