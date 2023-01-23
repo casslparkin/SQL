@@ -1,3 +1,7 @@
+In this project, I researched data about the last 10 Pulitzer winners and compiled the info into two tables. 
+I joined the two tables in two different ways to glean insight about the data.
+
+
 Create TABLE Author_Info (iD integer primary key, Name TEXT, Birthdate NUMERIC, Place_of_Origin TEXT, Current_Residence TEXT);
 
 INSERT INTO Author_Info (Name, Birthdate, Place_of_Origin, Current_Residence) VALUES ("Joshua Cohen","1980-09-06", "New Jersey", "Brooklyn, NY");
