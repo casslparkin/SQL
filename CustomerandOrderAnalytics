@@ -35,3 +35,8 @@ Inner Join BIT_DB.Febsales Feb
 On Cust.order_id=Feb.orderID
 Where Feb.Quantity >2
 AND length (orderid)=6;
+
+SELECT Product, SUM(quantity)
+FROM BIT_DB.FebSales 
+WHERE location like '%Los Angeles%'
+GROUP BY Product
